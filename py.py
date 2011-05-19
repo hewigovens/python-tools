@@ -16,7 +16,7 @@ import base64, binascii, cgi, ConfigParser, csv, fnmatch, optparse, urlparse
 import xml, xml.dom, xml.dom.minidom
 import lxml.etree, lxml._elementpath, gzip
 import sqlite3, bsddb
-import socket, ssl, thread, select, asyncore
+import socket, ssl, thread, select, asyncore, asynchat
 import BaseHTTPServer, SocketServer, CGIHTTPServer
 import httplib, urllib, urllib2, ftplib, telnetlib, smtplib, socks
 import email.iterators, email.Iterators, email.Utils, email.base64MIME, email.mime.text
