@@ -80,6 +80,7 @@ def optparse_options_to_dist_options(filename, options):
                       'dll_excludes' : ['w9xpopen.exe', 'MSVCP90.dll', 'mswsock.dll', 'powrprof.dll'],
                       'ascii'        : options.ascii or False,
                       'bundle_files' : options.bundle or 3,
+                      'excludes'     : options.excludes.split(',') or [],
                      }
 
     zipfile = options.zipfile
@@ -113,6 +114,7 @@ def main():
     parser.add_option("-i", "--icon"   ,  dest="icon",     type="string", metavar="file.ico", help="add file.ico to the executable's resources.")
     parser.add_option("-z", "--zipfile",  dest="zipfile",  type="string", metavar="file.zip", help="add file.zip to the extra resources.")
     parser.add_option("-X", "--upx"   ,   dest="upx",      action="store_true", default=False, help="if you have UPX installed (detected by Configure), this will use it to compress your executable.")
+    parser.add_option("-x", "--excludes", dest="excludes", type="string", default='', help="py2exe excludes packages.")
 
     options, args = parser.parse_args()
     if len(args) == 0:
