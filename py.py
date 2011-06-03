@@ -7,22 +7,16 @@ psyco.full()
 import sys, os
 sys.path += ['.', os.path.dirname(sys.executable)]
 
-import sys, os, re, time, inspect, errno, copy
-import logging, logging.handlers, logging.config
-import cStringIO, StringIO, string, types, weakref
-import tarfile, zipfile, tempfile
-import glob, shutil, hashlib, json, platform, random, uuid
-import base64, binascii, cgi, ConfigParser, csv, fnmatch, optparse, urlparse
-import xml, xml.dom, xml.dom.minidom
-import lxml.etree, lxml._elementpath, gzip
-import sqlite3, bsddb
-import socket, ssl, thread, select, asyncore, asynchat
-import BaseHTTPServer, SocketServer, CGIHTTPServer
-import httplib, urllib, urllib2, ftplib, telnetlib, smtplib, socks
-import email.iterators, email.Iterators, email.Utils, email.base64MIME, email.mime.text
-import OpenSSL, Crypto.Cipher.AES
-import ctypes, ctypes.wintypes, comtypes, comtypes.client
-import win32api, win32process, win32con, win32gui, win32com.client, wmi
+import sys, os, re, time
+import errno, zlib, struct, logging
+import httplib, urllib2, urlparse, socket, select
+import BaseHTTPServer, SocketServer
+import threading, Queue
+import ConfigParser
+import ssl
+import ctypes
+import OpenSSL.crypto
+
 
 sys.argv.pop(0)
 if sys.argv[0] == '-c':

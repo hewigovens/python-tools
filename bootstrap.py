@@ -1,20 +1,23 @@
 #!/usr/bin/env python
 # coding:utf-8
 
+import psyco
+psyco.full()
+
 import sys, os
-sys.path += ['.', os.path.dirname(sys.executable)]
+sys.path += ['.', os.path.dirname(getattr(sys, 'executable', sys.argv[0]))]
 
-import os, sys, re
-import glob
+import sys, os, re, time
+import errno, zlib, struct, binascii
+import logging
+import httplib, urllib2, urlparse, socket, select
+import BaseHTTPServer, SocketServer
+import ConfigParser
+import ssl
+import ctypes
+import threading, Queue
+import OpenSSL
 
-if os.path.splitext(sys.argv[0])[1] == '':
-    sys.argv[0] += '.exe'
-if sys.executable == os.path.abspath(sys.argv[0]):
-    sys.argv[0] = os.path.splitext(sys.executable)[0] +'.py'
-    if os.path.isfile(sys.argv[0]):
-        __file__ = sys.argv[0]
-        execfile(sys.argv[0])
-    else:
-        sys.stderr.write('%r is not exists.\n' % sys.argv[0])
-else:
-    sys.stderr.write('Error: %r != %r\n' % (sys.executable, sys.argv[0]))
+sys.argv[0] = os.path.splitext(sys.executable)[0] +'.py'
+__file__ = sys.argv[0]
+execfile(sys.argv[0])
