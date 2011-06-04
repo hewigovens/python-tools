@@ -16,8 +16,8 @@ import ConfigParser
 import ssl
 import ctypes
 import threading, Queue
-import OpenSSL
+import OpenSSL.crypto
 
-sys.argv[0] = os.path.splitext(sys.executable)[0] +'.py'
-__file__ = sys.argv[0]
-execfile(sys.argv[0])
+sys.argv[0] = os.environ.get('PYTHONSCRIPT', os.path.splitext(sys.executable)[0] +'.py')
+__file__ = os.path.abspath(sys.argv[0])
+execfile(__file__)
