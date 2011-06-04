@@ -5,6 +5,7 @@ import psyco
 psyco.full()
 
 import sys, os
+sys.dont_write_bytecode = True
 sys.path += ['.', os.path.dirname(getattr(sys, 'executable', sys.argv[0]))]
 
 import sys, os, re, time
