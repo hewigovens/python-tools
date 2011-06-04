@@ -5,7 +5,7 @@ import sys, os, re, time
 import logging
 import glob
 
-logging.basicConfig(level=0, format='%(asctime)s %(levelname)s %(message)s')
+logging.basicConfig(level=0, format='%(levelname)s - - %(asctime)s %(message)s', datefmt='[%d/%b/%Y %H:%M:%S]')
 
 def main():
     for strFilename in glob.glob('*'):

@@ -17,7 +17,6 @@ import ssl
 import ctypes
 import OpenSSL.crypto
 
-
 sys.argv.pop(0)
 if sys.argv[0] == '-c':
     sys.argv.pop(0)
