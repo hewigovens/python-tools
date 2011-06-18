@@ -6,6 +6,7 @@ reg add "HKEY_CURRENT_USER\Console\%%SystemRoot%%_system32_cmd.exe" /v "WindowSi
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor" /v "DisableUNCCheck" /t REG_DWORD /d 1 /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor" /v "PathCompletionChar" /t REG_DWORD /d 64 /f
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor" /v "CompletionChar" /t REG_DWORD /d 9 /f
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Command Processor" /v "DisableUNCCheck" /t REG_DWORD /d 1 /f
 ver | findstr /r "5\.[01]\." && (
     reg add "HKEY_CLASSES_ROOT\Folder\shell\DOS" /v "" /t REG_SZ /d "%TIP%" /f
     reg add "HKEY_CLASSES_ROOT\Folder\shell\DOS\command" /v "" /t REG_SZ /d "%ComSpec% /d" /f
