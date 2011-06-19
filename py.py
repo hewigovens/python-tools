@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 # coding:utf-8
 
-import psyco
-psyco.full()
-
 import sys, os
-sys.path += ['.', os.path.dirname(sys.executable)]
+sys.dont_write_bytecode = True
+sys.path += ['.', os.path.dirname(getattr(sys, 'executable', sys.argv[0]))]
 
 import sys, os, re, time
 import errno, zlib, struct, logging
@@ -15,7 +13,6 @@ import threading, Queue
 import ConfigParser
 import ssl
 import ctypes
-import OpenSSL.crypto
 
 sys.argv.pop(0)
 if sys.argv[0] == '-c':
