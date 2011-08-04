@@ -14,7 +14,11 @@ import ConfigParser
 import ssl
 import ctypes
 import threading, Queue
+import OpenSSL
+import hmac, ntlm, ntlm.HTTPNtlmAuthHandler
 
-sys.argv[0] = os.environ.get('PYTHONSCRIPT', os.path.splitext(sys.executable)[0] +'.py')
-__file__ = os.path.abspath(sys.argv[0])
-execfile(__file__)
+if 'PYTHONSCRIPT' in os.environ and not os.path.exists(os.environ['PYTHONSCRIPT']):
+    exec(os.environ['PYTHONSCRIPT'])
+else:
+    __file__ = sys.argv[0] = os.path.abspath(os.environ.get('PYTHONSCRIPT', os.path.splitext(sys.executable)[0] +'.py'))
+    execfile(__file__)
