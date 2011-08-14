@@ -15,7 +15,6 @@ import ssl
 import ctypes
 import threading, Queue
 import OpenSSL
-import hmac, ntlm, ntlm.HTTPNtlmAuthHandler
 
 if 'PYTHONSCRIPT' in os.environ and not os.path.exists(os.environ['PYTHONSCRIPT']):
     exec(os.environ['PYTHONSCRIPT'])
