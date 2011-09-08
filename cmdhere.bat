@@ -14,7 +14,7 @@ ver | findstr /r "5\." && (
 ver | findstr /r "6\." && (
     reg add "HKEY_CLASSES_ROOT\Folder\shell\runas" /v "" /t REG_SZ /d "@shell32.dll,-22022" /f
     reg add "HKEY_CLASSES_ROOT\Folder\shell\runas" /v "Icon" /t REG_SZ /d "%windir%\System32\imageres.dll,-78" /f
-    reg add "HKEY_CLASSES_ROOT\Folder\shell\runas\command" /v "" /t REG_SZ /d "cmd.exe /d /s /k ver" /f
+    reg add "HKEY_CLASSES_ROOT\Folder\shell\runas\command" /v "" /t REG_SZ /d "cmd.exe /d /s /k ver && cd /d %%v" /f
 )
 
 pause
